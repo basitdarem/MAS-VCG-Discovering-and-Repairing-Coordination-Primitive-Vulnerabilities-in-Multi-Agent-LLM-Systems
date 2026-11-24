@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below. This is a pre-publication research prototype."
+title: "MAS-VCG: Coordination Vulnerability Concept discovery and protocol-level repair for multi-agent LLM systems"
+type: software
+version: 0.1.0
+date-released: 2026-11-23
+authors:
+  - family-names: Mahmoud
+    given-names: Ragab
+abstract: >-
+  Research code for studying protocol-level coordination vulnerabilities in
+  multi-agent LLM systems built with AutoGen and CrewAI, and protocol-level
+  patches as repairs. Pilot stage; empirical results are not yet published.
+keywords:
+  - multi-agent systems
+  - LLM security
+  - coordination protocols
+  - AutoGen
+  - CrewAI

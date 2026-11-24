@@ -1,0 +1,30 @@
+# Core (no API keys needed — rigor_stats.py and cvc_schema.py self-tests run with just these)
+numpy>=1.26
+scipy>=1.11
+pandas>=2.1
+scikit-learn>=1.4     # KMeans + ARI/NMI for rq_analysis.py's RQ1 clustering comparison
+matplotlib>=3.8       # plots.py's charts (primitive distribution, promotion curves, judge kappa, ERS comparison)
+
+# Model access (needed only once you call model_router.py's generate()/live_smoke_test())
+google-generativeai>=0.8
+openai>=1.40          # also used as the Groq client (OpenAI-SDK-compatible endpoint)
+
+# Multi-agent frameworks
+# IMPORTANT: do NOT `pip install pyautogen` on a fresh environment today — as of
+# late 2026 that name resolves to a proxy package for Microsoft's rewritten,
+# fully-async `autogen-agentchat` (v0.4+), which has a completely different API
+# (no `import autogen`, no ConversableAgent/GroupChat) from the classic API that
+# TAMAS/AHA/BlindGuard/INFA-Guard and most multi-agent-security literature were
+# built on. The classic ConversableAgent/GroupChat/GroupChatManager API is kept
+# alive by the community fork, but ONLY in its pre-1.0 releases — ag2>=1.0
+# underwent its own unrelated breaking rewrite (new Agent/Toolkit/Middleware
+# framework). Pin exactly this:
+ag2==0.9.10          # provides `import autogen` with ConversableAgent/GroupChat (verified)
+crewai>=1.15          # provides Agent/Task/Crew/Process.hierarchical, BaseLLM (verified)
+
+# Real sentence embeddings for RQ1/RQ3 numbers you intend to report (optional; every self-test runs without it)
+# sentence-transformers>=3.0
+
+# Testing (optional — only needed to run `pytest tests/`; every module's own
+# `python -m mas_vcg.<module>` self-test needs nothing beyond the Core block above)
+pytest>=8.0

@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Secrets (never commit keys)
+.env
+.env.*
+*.key
+secrets*.json
+
+# The discovery engine is NOT part of this repository (see docs/engine_interface.md).
+# Ignored so it cannot be committed by accident.
+mas_vcg/discovery_loop.py
+engine/
+tests/test_discovery_loop.py
+
+# Campaign outputs: they contain attack text and must be reviewed before sharing
+pilot_results*.json
+trajectories*.json
+patch_eval*.json
+model_usage_patch_eval*.json
+patch_generalization_matrix.csv
+labeling_sample.csv
+labeling_key.json
+labeling_filled_*.csv
+findings_report_*.md
+fig_*.png

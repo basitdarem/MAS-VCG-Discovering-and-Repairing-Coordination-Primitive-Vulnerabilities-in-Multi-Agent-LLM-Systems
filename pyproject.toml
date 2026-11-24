@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mas-vcg"
+version = "0.1.0"
+description = "Coordination Vulnerability Concept discovery and protocol-level repair for multi-agent LLM systems (research prototype)"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.26",
+  "scipy>=1.11",
+  "pandas>=2.1",
+  "scikit-learn>=1.4",
+  "matplotlib>=3.8",
+]
+
+[project.optional-dependencies]
+models = ["google-generativeai>=0.8", "openai>=1.40"]
+frameworks = ["ag2==0.9.10", "crewai>=1.15"]
+embeddings = ["sentence-transformers>=3.0"]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools]
+packages = ["mas_vcg"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
